@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Passo a passo grátis · Animação com IA · Mind</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0D0D0D;color:#F3F0E9;font-family:'Inter Tight',sans-serif;font-size:17px;line-height:1.55}
+.w{max-width:640px;margin:0 auto;padding:36px 22px 60px}
+.logo{font-family:Archivo;font-weight:800;font-size:24px}.logo b{color:#C4F135}
+.tag{display:inline-block;margin-top:34px;background:#C4F135;color:#0D0D0D;font-weight:700;font-size:13px;padding:5px 12px;border-radius:99px;letter-spacing:.3px}
+h1{font-family:Archivo;font-weight:900;font-size:clamp(40px,11vw,64px);line-height:.95;letter-spacing:-1.5px;margin:14px 0 8px}
+h1 em{font-family:'Instrument Serif';font-style:italic;font-weight:400;color:#C4F135;letter-spacing:0}
+.lead{color:#cfcbc3;margin-bottom:30px}
+ol{list-style:none;counter-reset:s}
+li{counter-increment:s;position:relative;padding:18px 18px 18px 66px;border:1px solid #262626;border-radius:16px;margin-bottom:12px;background:#141414}
+li::before{content:counter(s);position:absolute;left:18px;top:16px;width:34px;height:34px;border-radius:50%;background:#C4F135;color:#0D0D0D;font-family:Archivo;font-weight:900;display:flex;align-items:center;justify-content:center}
+li b{color:#fff}
+h2{font-family:Archivo;font-weight:900;font-size:26px;margin:34px 0 12px}
+.p{position:relative;background:#141414;border:1px solid #262626;border-radius:16px;padding:18px;font-family:'JetBrains Mono',monospace;font-size:14px;white-space:pre-wrap;color:#e8e4dc}
+.cp{margin-top:10px;background:transparent;border:1px solid #C4F135;color:#C4F135;font-weight:600;font-size:15px;padding:10px 16px;border-radius:99px;cursor:pointer}
+.cta{margin-top:38px;background:#C4F135;color:#0D0D0D;border-radius:22px;padding:26px 22px}
+.cta h3{font-family:Archivo;font-weight:900;font-size:28px;line-height:1.05;margin-bottom:10px}
+.cta p{font-size:16px;margin-bottom:18px}
+.btn{display:block;text-align:center;background:#0D0D0D;color:#C4F135;text-decoration:none;font-weight:700;font-size:18px;padding:17px;border-radius:99px}
+.foot{margin-top:30px;color:#777;font-size:13px;text-align:center}
+</style></head><body><div class="w">
+<div class="logo">mind<b>.</b></div>
+<span class="tag">PASSO A PASSO GRÁTIS</span>
+<h1>Animação <em>com IA</em></h1>
+<p class="lead">O Reels que você viu foi feito em 5 passos, todos com IA. Aqui está o caminho resumido.</p>
+<ol>
+<li><b>Roteiro com gancho.</b> 8 a 10 falas curtas, uma ideia por fala, com o fato mais forte na primeira frase e um CTA com palavra-chave no fim.</li>
+<li><b>Imagens em colagem.</b> Um pack de 8 a 12 imagens no mesmo estilo: peças recortadas, fundo escuro e uma cor de destaque. Gere também as peças principais separadas, para criar profundidade.</li>
+<li><b>Narração.</b> Sua voz ou uma voz com IA. A pontuação controla o ritmo: vírgula respira, ponto pausa, exclamação dá energia.</li>
+<li><b>Animação pelo Claude.</b> Com "Código e criação de arquivos" ligado, você envia voz, imagens e roteiro, e ele monta as cenas sincronizadas com a fala e renderiza o MP4.</li>
+<li><b>Ajustes por conversa.</b> Não gostou de algo? É só pedir: "deixa o começo mais impactante", "troca a cor", "atrasa esse texto".</li>
+</ol>
+<h2>Um prompt para você testar hoje</h2>
+<div class="p" id="pr">Escreva o roteiro de um Reels de 35 segundos sobre [seu tema].
+Gancho forte na primeira frase, 8 a 10 falas curtas, uma ideia por fala.
+Escrito para ser falado em voz alta.
+Termine com: "Comenta a palavra [PALAVRA], que eu te mando [o que a pessoa recebe]."</div>
+<button class="cp" onclick="navigator.clipboard.writeText(document.getElementById('pr').innerText).then(()=>{this.textContent='Copiado ✓'})">Copiar prompt</button>
+<div class="cta">
+<h3>Quer fazer igual ao nosso?</h3>
+<p>O <b>Guia Animação com IA</b> traz cada etapa em detalhe, o prompt mestre que monta a animação, os comandos de ajuste, o modelo do nosso projeto cena por cena e o checklist para postar.</p>
+<a class="btn" href="https://thinkmind.com.br/animacao/">Ver o guia completo →</a>
+</div>
+<p class="foot">think growth. think mind.</p>
+</div></body></html>
