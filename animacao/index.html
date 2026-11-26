@@ -372,17 +372,20 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
  const CHECKOUT_URL = 'https://pay.kiwify.com.br/KsYLLob';
  if (CHECKOUT_URL) document.querySelectorAll('.checkout').forEach(a => a.href = CHECKOUT_URL);
 
- /* ABERTURA DA OFERTA (horário de Brasília): o preço de lançamento vale por 5 horas a partir daqui.
-    Troque pelo horário em que você postar o Reels. */
- const LAUNCH = '2026-11-25T20:45:00-03:00';
- const HOURS = 5;
- const DEADLINE = LAUNCH ? new Date(new Date(LAUNCH).getTime() + HOURS * 36e5).toISOString() : '';
+ /* CRONÔMETRO PERMANENTE: cada visitante vê 5h contando a partir da 1ª visita; ao zerar, reinicia. */
+ const HOURS = 5, KEY = 'mind_anim_deadline';
+ function getEnd() {
+  let e = 0;
+  try { e = +localStorage.getItem(KEY) || 0; } catch (_) {}
+  if (!e || e <= Date.now()) { e = Date.now() + HOURS * 36e5; try { localStorage.setItem(KEY, e); } catch (_) {} }
+  return e;
+ }
  const slots = document.querySelectorAll('.cdslot');
- const end = DEADLINE ? new Date(DEADLINE).getTime() : 0;
+ let end = getEnd();
  const pad = n => String(n).padStart(2, '0');
  function tick() {
-  const ms = end - Date.now();
-  if (!end || ms <= 0) { slots.forEach(s => s.textContent = ''); document.querySelectorAll('.cdwrap').forEach(w => w.style.display = 'none'); return false; }
+  let ms = end - Date.now();
+  if (ms <= 0) { end = getEnd(); ms = end - Date.now(); }
   const d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60, s = Math.floor(ms / 1e3) % 60;
   const html = `<span class="cd">${d ? `<b>${d}d</b>` : ''}<b>${pad(h)}</b>:<b>${pad(m)}</b>:<b>${pad(s)}</b></span>`;
   slots.forEach(el => el.innerHTML = html);
